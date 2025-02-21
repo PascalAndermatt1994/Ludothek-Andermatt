@@ -1,0 +1,13 @@
+Flask
+Flask-SQLAlchemy
+python-dotenv
+pytest
+gunicorn
+flasgger
+flask_wtf
+PyMySQL
+flask-login
+flask-bcrypt
+flask-migrate
+email_validator
+flask_jwt_extended
