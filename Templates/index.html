@@ -5,14 +5,14 @@ Spiele
 {% endblock %}
 
 {% block content %}
+<div class="container">
+{% if current_user.is_admin %}
+<a href="{{ url_for('games.add_game') }}" class="btn btn-primary mb-3">Add Game</a>
+{% endif %}
 {% if games|length == 0 %}
 <h1>There are no Devices!</h1>
 {% else %}
-<div class="container">
     <h2>Spiele</h2>
-    {% if current_user.is_admin %}
-    <a href="{{ url_for('games.add_game') }}" class="btn btn-primary mb-3">Add Game</a>
-    {% endif %}
     <table class="table table-striped">
         <thead>
             <tr>
@@ -55,6 +55,6 @@ Spiele
             {% endfor %}
         </tbody>
     </table>
-</div>
 {% endif %}
+</div>
 {% endblock %}
