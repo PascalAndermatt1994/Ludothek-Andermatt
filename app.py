@@ -12,7 +12,7 @@ from models.user import User
 from modules.user import user_bp
 from modules.home import home_bp
 from modules.games import games_bp
-from api import api_bp
+from modules.api import api_bp
 
 load_dotenv()
 

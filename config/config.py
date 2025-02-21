@@ -3,8 +3,8 @@ class BaseConfig:
     DEBUG = False
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = 'kskldjfökajsdnmsdjkfjföjsdjfölkasjd'
-    JWT_SECRET_KEY = 'sdlkfjkösdjfkjsdkfjklsdjföklsj'
+    SECRET_KEY = '6d428103-51f3-42a5-bdf8-07126520f939'
+    JWT_SECRET_KEY = '2888efc9-909d-413f-ac4e-165be7f95e11'
 
 class DevelopmentConfig(BaseConfig):
     """Development configuration."""

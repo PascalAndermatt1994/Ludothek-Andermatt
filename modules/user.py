@@ -24,12 +24,12 @@ def login_post():
     return redirect(url_for('user.login'))
   
   user = db.session.execute(db.select(User).filter_by(email=user_login_form.email.data)).scalar_one_or_none()
-  if user is None:
-    flash('Invalid email or password')
-    return redirect(url_for('user.login'))
-  else:
+  if user is not None and bcrypt.check_password_hash(user.password, user_login_form.password.data):
     login_user(user, remember=user_login_form.remember_me.data)
     return redirect(url_for('home.index'))
+  else:
+    flash('Invalid email or password')
+    return redirect(url_for('user.login'))
       
 @user_bp.route('/logout', methods=['GET'])
 @login_required
